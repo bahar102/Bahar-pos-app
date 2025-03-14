@@ -72,9 +72,11 @@ const CartContext = createContext <{
                 };
                 case 'UPDATE_QUANTITY':
                     return{
-                        ...state,
+                        ...state,// Copy the current state
                         items: state.items.map(item =>
-                            item.id === action.id ? {...item, quantity:action.quantity} :item
+                            item.id === action.id 
+                            ? {...item, quantity:action.quantity} // Update the quantity
+                            :item // Keep other items as they are
                         ),
                     };
                     case 'CLEAR_CART':
