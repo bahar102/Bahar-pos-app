@@ -27,11 +27,14 @@
 }
 
 .product {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  width: calc(33.333% - 1rem);
-  box-sizing: border-box;
-  text-align: center;
+  border: 5px solid red; /* Thick red border - very visible */
+  background-color: yellow; /* Bright yellow background - very visible */
+  /* padding: 1rem;  Temporarily comment out other styles */
+  /* width: calc(33.333% - 1rem); */
+  /* box-sizing: border-box; */
+  /* text-align: center; */
+
+
 }
 
 .cart {
@@ -85,4 +88,17 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.addToCartButton {
+  margin-top: .5rem;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addToCartButton:hover{
+  background-color: #3e8e41;
 }
