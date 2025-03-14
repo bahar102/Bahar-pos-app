@@ -22,7 +22,13 @@ function Cart(){
                 <ul>
                     {state.items.map(item =>(
                         <li key={item.id}>
+                              <button className={styles.clearCartButton}
+                            onClick={() => dispatch({type: 'CLEAR_CART'})}>
+                                Clear Cart</button>
+                            <br/>
+                            <br/>
                             {item.name} - ${item.price} * {item.quantity}
+                          
                             <button
                             className={styles.updateQ}
                         onClick={() => {
@@ -37,6 +43,8 @@ function Cart(){
                     onClick={() => dispatch({ type: 'UPDATE_QUANTITY', id: item.id, quantity: item.quantity + 1 })}>
                         +
                     </button>
+                    <br/>
+                    <br/>
                             <button 
                             className={styles.removeButton}
                             onClick={() => dispatch({type: 'REMOVE_ITEM', id:  item.id})}>

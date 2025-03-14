@@ -126,3 +126,18 @@
    cursor: pointer; } 
  .updateQ:disabled{ opacity: 0.6; cursor: not-allowed;
 }
+.clearCartButton{
+  margin-top: .5rem;
+  background-color: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.clearCartButton:hover{
+  background-color: #da190b;
+}
+.quantityButton{
+background-color: #606060 !important;
+}
