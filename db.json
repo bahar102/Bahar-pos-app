@@ -1,39 +1,39 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Laptop",
-        "price": 999.99,
-        "description": "A powerful laptop for work and play.",
-        "imageUrl": "/images/product-1.jpg"
-      },
-      {
-        "id": 2,
-        "name": "Mouse",
-        "price": 25.50,
-        "description": "An ergonomic wireless mouse.",
-        "imageUrl": "/images/product-2.jpg"
-      },
-      {
-        "id": 3,
-        "name": "Keyboard",
-        "price": 75.00,
-        "description": "A mechanical keyboard with RGB lighting.",
-        "imageUrl": "/images/product-3.jpg"
-      },
-      {
-        "id": 4,
-        "name": "Monitor",
-        "price": 299.99,
-        "description": "A 27-inch IPS monitor.",
-        "imageUrl": "/images/product-4.jpg"
-      },
-      {
-        "id": 5,
-        "name": "Headphones",
-        "price": 149.99,
-        "description": "Noise-canceling headphones.",
-        "imageUrl": "/images/product-5.jpg"
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 999.99,
+      "description": "A powerful laptop for work and play.",
+      "imageUrl": "/images/product-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": 25.50,
+      "description": "An ergonomic wireless mouse.",
+      "imageUrl": "/images/product-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Keyboard",
+      "price": 75.00,
+      "description": "A mechanical keyboard with RGB lighting.",
+      "imageUrl": "/images/product-3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Monitor",
+      "price": 299.99,
+      "description": "A 27-inch IPS monitor.",
+      "imageUrl": "/images/product-4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Headphones",
+      "price": 149.99,
+      "description": "Noise-canceling headphones.",
+      "imageUrl": "/images/product-5.jpg"
+    }
+  ]
+}

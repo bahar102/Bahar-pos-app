@@ -1,13 +1,36 @@
 import styles from '../styles/Home.module.css'
 import ProductList from '../components/ProductList'; // or '@/components/ProductList';
 import Cart from '@/components/Cart'
+import {useState, useEffect } from 'react';
+import { getProducts } from '@/lib/api';
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  description?: string;
+  imageUrl:string;
+}
 
 export default function Home() {
-  const dummyProducts = [
-    { id: 1, name: 'Product 1', price: 10 },
-    { id: 2, name: 'Product 2', price: 20 },
-    { id: 3, name: 'Product 3', price: 30 },
-  ];
+  const [products, setProducts] =useState<Product[]>([]); //State for products
+  const [loading, setLoading] = useState(true); //state for loading indicator
+  const [error, setError] = useState<string | null>(null); //State for error message
+
+  useEffect(()=>{
+    async function fetchData(){
+      try{
+        const fetchProducts = await getProducts();
+        setProducts(fetchProducts);
+      }catch(error: any){
+        setError(error.message || 'An error occurred');
+      } finally{
+        setLoading(false)
+      }
+    }
+
+    fetchData();
+  },[]);// Empty dependency array: run only once on mount
 
   return (
     <div className={styles.container}>
@@ -16,7 +39,10 @@ export default function Home() {
       </header>
       <main className={styles.main}>
         <section className={styles.productList}>
-          <ProductList products={dummyProducts} />
+          {loading ? (
+            <p>Loading products...</p>
+          ) : error ? (<p>Error: {error}</p>): (
+          <ProductList products={products} />)}
         </section>
         <aside className={styles.cart}>
         <Cart />
