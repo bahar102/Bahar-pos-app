@@ -1,0 +1,11 @@
+/* styles/ProductPage.module.css */
+
+.container {
+    padding: 1rem;
+  }
+  
+  .image {
+    max-width: 100%; /* Make sure images don't overflow */
+    height: auto;
+    margin-bottom: 1rem;
+  }

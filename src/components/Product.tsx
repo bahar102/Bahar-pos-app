@@ -2,6 +2,7 @@ import styles from  '../styles/Home.module.css'
 // 1-step3 -1 
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
+import Link from 'next/link';
 
 /*
 this defines the type of the props that the Product component will 
@@ -34,9 +35,12 @@ function Product ({product}: ProductProps){
     //END  1-step3 - 2 
     return(
         <div className={styles.product}>
-          <h3>{product.name}</h3>
+            <Link href={`/products/${product.id}`}>
+          <h3>{product.name}</h3></Link>
           <p>${product.price}</p>
+          <Link href={`/products/${product.id}`}>
           <button className={styles.detailsButton}>Details</button>
+          </Link>
           <button className={styles.addToCartButton}
           onClick={() =>{
             dispatch({
