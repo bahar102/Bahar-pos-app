@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import {useState, useEffect} from 'react'
 import styles from '../../styles/ProductPage.module.css'
+import Link from "next/link";
 
 interface Product {
     id: number;
@@ -21,7 +22,7 @@ export default function ProductPage(){
     useEffect(() => {
         async function fetchProduct() {
           if (!id) return; // Important: Don't fetch if 'id' is not available
-    debugger
+    
           try {
             const response = await fetch(`http://localhost:3001/products/${id}`);
             if (!response.ok) {
@@ -53,6 +54,7 @@ export default function ProductPage(){
 
         return(
             <div className={styles.container}>
+              <Link href="/"><button className="styles.backButton">Back to Products</button></Link>
                 <h1>{product.name}</h1>
                 <img src={product.imageUrl} alt={product.name} className={styles.image} />
                 <p>{product.description}</p>
