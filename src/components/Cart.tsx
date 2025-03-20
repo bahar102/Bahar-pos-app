@@ -1,6 +1,8 @@
 import React,{useContext} from "react";
 import { CartContext } from "./CartContext";
 import styles from '../styles/Home.module.css'
+import  stylesCheckout  from '../styles/Checkout.module.css';
+import Link from 'next/link'
 
 
 
@@ -53,6 +55,10 @@ function Cart(){
                     ))}
                 </ul>
                 <p> Total: ${totalPrice.toFixed(2)}</p>
+                <Link href="/checkout">
+                <button className={stylesCheckout.checkoutButton}>Go to Checkout</button>
+                </Link>
+                <button className={styles.CartButton} onClick={() => {dispatch({type: 'CLEAR_CART'})}}>Clear Cart</button>
               </div>
             )}
 

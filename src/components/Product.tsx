@@ -16,19 +16,6 @@ interface ProductProps{
         price: number;
     }
 }
-/*function Product({ product }: ProductProps): 
-This is the component definition.
- The : ProductProps after the parameter list specifies
-  that the props passed to this component must conform
-   to the ProductProps interface. The { product } is 
-   destructuring – we're extracting the product property 
-   from the props object.*/ 
-
-   /********************* */
-   /*JSX: The rest is standard JSX, rendering the product
-    information using the data from the product prop.
-     We use the CSS classes from Home.module.css for styling, 
-     as before. */
 function Product ({product}: ProductProps){
 //START  1-step3 - 2 
     const {dispatch} = useContext(CartContext);
