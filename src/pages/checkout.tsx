@@ -2,8 +2,11 @@ import React, { useState, useContext } from "react"; // to access cat data
 import { CartContext } from "@/components/CartContext";
 import styles from "@/styles/Checkout.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Checkout(){
+
+    const router = useRouter();
     const {state, dispatch} = useContext(CartContext);
 
         const [name, setName] = useState('');
@@ -28,12 +31,13 @@ const totalPrice = state.items.reduce((total, item) => {
             }
 
             console.log('Order submitted:', orderData );
-             alert('order submitted successfullly!(Simulated)');
+          //   alert('order submitted successfullly!(Simulated)');
 
              dispatch({type:'CLEAR_CART'});
              // Redirect to an order confirmation page (optional - we'll implement this later)
-  // router.push('/order-confirmation');
+   router.push('/order-confirmation');
         }
+        
     return(
     <div className={styles.container}>
         <h1>Checkout</h1>
