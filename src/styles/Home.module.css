@@ -141,3 +141,6 @@
 .quantityButton{
 background-color: #606060 !important;
 }
+.productImage{
+  object-fit: contain;
+}

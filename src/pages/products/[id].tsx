@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import {useState, useEffect} from 'react'
 import styles from '../../styles/ProductPage.module.css'
 import Link from "next/link";
+import Image from "next/image";
 
 interface Product {
     id: number;
@@ -56,7 +57,13 @@ export default function ProductPage(){
             <div className={styles.container}>
               <Link href="/"><button className="styles.backButton">Back to Products</button></Link>
                 <h1>{product.name}</h1>
-                <img src={product.imageUrl} alt={product.name} className={styles.image} />
+                <Image  src={product.imageUrl}
+                alt={product.name}
+                width={200}
+                height={200}
+                className={styles.productImage}
+                />
+               
                 <p>{product.description}</p>
                 <p>Price: ${product.price}</p>
                 {/* Add more product details here as needed*/}

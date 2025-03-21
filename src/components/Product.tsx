@@ -3,6 +3,7 @@ import styles from  '../styles/Home.module.css'
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import Link from 'next/link';
+import Image from 'next/image';
 
 /*
 this defines the type of the props that the Product component will 
@@ -14,6 +15,7 @@ interface ProductProps{
         id: number;
         name: string;
         price: number;
+        imageUrl: string;
     }
 }
 function Product ({product}: ProductProps){
@@ -24,6 +26,14 @@ function Product ({product}: ProductProps){
         <div className={styles.product}>
             <Link href={`/products/${product.id}`}>
           <h3>{product.name}</h3></Link>
+          <Link href={`products/${product.id}`}>
+          <Image src={product.imageUrl}
+          alt={product.name}
+          width={200}
+          height={200}
+          className={styles.productImage}
+          />
+          </Link>
           <p>${product.price}</p>
           <Link href={`/products/${product.id}`}>
           <button className={styles.detailsButton}>Details</button>
